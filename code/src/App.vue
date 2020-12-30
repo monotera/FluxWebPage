@@ -1,11 +1,20 @@
 <template>
-  <h1>Hello world</h1>
+  
+  <div id="app">
+    <Home/>
+    <Footer/>
+  </div>
+  
 </template>
 
 <script>
 
+import Home from '../src/views/Home'
+import Footer from '../src/components/Footer'
 
 export default {
+  name: 'App',
+  components: { Home, Footer },
  
 }
 </script>
