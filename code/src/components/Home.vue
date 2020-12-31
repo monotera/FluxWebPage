@@ -34,7 +34,7 @@
         width: 6em;
         font-size: 11em;
         letter-spacing: -0.04em;
-        color: #fff;
+        color: $main-font-color;
     }
     /* Subtitulo */
     .subtitle {
@@ -44,7 +44,7 @@
         align-items: center;
         width: 20em;
         margin-bottom: 30px;
-        color: #fff;
+        color: $main-font-color;
     }
     .subtitle h4 {
         font-family: 'headers-font', sans-serif;
@@ -52,7 +52,7 @@
         text-align: center;
     }
     .point {
-        background-color: #fff;
+        background-color: $main-font-color;
         width: 1em;
         height: 1em;
         border-radius: 50%;
@@ -60,17 +60,17 @@
     /* Boton principal */
     button {
         padding: 10px 20px;
-        border: 3px solid #fff;
-        color: #fff;
-        background-color: #000;
+        border: 3px solid $main-font-color;
+        color: $main-font-color;
+        background-color: $main-background-color;
         cursor: pointer;
         font-family: 'headers-font';
         transition: 0.5s;
         font-size: 10px;    
     }
     button:hover {
-        background-color: #fff;
-        color: #000;
+        background-color: $secondary-background-color;
+        color: $secondary-font-color;
     }
     #principal-button {
         font-size: 2em;
