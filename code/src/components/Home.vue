@@ -17,7 +17,7 @@
         width: 100%;
         height: 100vh;
         padding-top: 1px;
-        background-image: url('../../../assets/parkour-wallpaper.jpg');
+        background-image: url('../assets/images/parkour-wallpaper.jpg');
         background-size: cover;
         display: flex;
         flex-direction: column;
@@ -29,7 +29,7 @@
         display: inline-block;
         margin-top: -70px;
         margin-bottom: -5px;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'main-header', sans-serif;
         text-align: center;
         width: 6em;
         font-size: 11em;
@@ -47,8 +47,7 @@
         color: #fff;
     }
     .subtitle h4 {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
+        font-family: 'headers-font', sans-serif;
         font-size: 1.5em;
         text-align: center;
     }
@@ -65,8 +64,7 @@
         color: #fff;
         background-color: #000;
         cursor: pointer;
-        font-family: Montserrat;
-        font-weight: bold;
+        font-family: 'headers-font';
         transition: 0.5s;
         font-size: 10px;    
     }
