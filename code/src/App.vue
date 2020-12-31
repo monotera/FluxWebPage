@@ -1,31 +1,25 @@
 <template>
-  
   <div id="app">
-    <Home/>
-    <Footer/>
+    <Footer />
   </div>
-  
 </template>
 
 <script>
-
-import Home from '../src/views/Home'
-import Footer from '../src/components/Footer'
+import Footer from "../src/components/Footer";
 
 export default {
-  name: 'App',
-  components: { Home, Footer },
- 
-}
+  name: "App",
+  components: { Footer },
+};
 </script>
 
-<style lang = "scss">
+<style lang="scss">
 @import url("../src/styles/fonts.scss");
 * {
-  margin : 0;
+  margin: 0;
 }
-h1 {
-  color: $prueba;
-  font-family: "fontMontserratBold", sans-serif;
+a {
+  text-decoration: none;
+  color: white;
 }
 </style>
