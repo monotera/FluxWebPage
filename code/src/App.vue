@@ -1,15 +1,19 @@
 <template>
-  <h1>Hello world</h1>
+  <div>
+    <h1>Hello world</h1>
+    <Footer />
+  </div>
 </template>
 
 <script>
-
-
-export default {
- 
-}
+import Footer from "../src/components/Footer";
+export default { components: { Footer } };
 </script>
 
-<style>
-
+<style lang="scss">
+@import url("../src/styles/fonts.scss");
+h1 {
+  color: $prueba;
+  font-family: "fontMontserratBold", sans-serif;
+}
 </style>
