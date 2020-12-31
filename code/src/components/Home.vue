@@ -1,5 +1,5 @@
 <template>
-    <div id="inicio-component">
+    <div id="home-component">
         <h1>FLUX ACADEMY</h1>
         <div class="subtitle">
             <div class="point"></div>
@@ -12,7 +12,8 @@
 </template>
 
 <style lang="scss">
-    #inicio-component {
+    #home-component {
+        font-size: 10px;
         width: 100%;
         height: 100vh;
         padding-top: 1px;
@@ -30,31 +31,31 @@
         margin-bottom: -5px;
         font-family: 'Roboto', sans-serif;
         text-align: center;
-        width: 500px;
-        font-size: 110px;
+        width: 6em;
+        font-size: 11em;
         letter-spacing: -0.04em;
         color: #fff;
     }
     /* Subtitulo */
     .subtitle {
-        width: 500px;
+        width: 50em;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 200px;
+        width: 20em;
         margin-bottom: 30px;
         color: #fff;
     }
     .subtitle h4 {
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
-        font-size: 15px;
+        font-size: 1.5em;
         text-align: center;
     }
     .point {
         background-color: #fff;
-        width: 10px;
-        height: 10px;
+        width: 1em;
+        height: 1em;
         border-radius: 50%;
     }
     /* Boton principal */
@@ -66,29 +67,33 @@
         cursor: pointer;
         font-family: Montserrat;
         font-weight: bold;
-        transition: 0.5s;     
+        transition: 0.5s;
+        font-size: 10px;    
     }
     button:hover {
         background-color: #fff;
         color: #000;
     }
     #principal-button {
-        font-size: 20px;
-        width: 327px;
+        font-size: 2em;
+        width: 16em;
         margin-bottom: 75px;
     }
 
-    /* Media query */
+    /* Media query mobile view */
+    @media (max-width: $breakpoint-columns) {
+        #home-component {
+            font-size: 5px;
+        }
+        .subtitle h4 {
+            font-size: 2em;
+        }
+    }
     
 </style>
 
 <script>
-const wallpaper = require('../../../assets/parkour-wallpaper.jpg')
 export default {
-    data() {
-        return {
-            wallpaper
-        }
-    }
+    
 }
 </script>

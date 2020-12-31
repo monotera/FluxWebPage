@@ -1,21 +1,22 @@
 <template>
   <div>
     <HomeComponent></HomeComponent>
+    <Footer/>
   </div>
 </template>
 
 <script>
+import Footer from "../src/components/Footer";
 import HomeComponent from './components/Home.vue'
-export default {
-  components: {
-    HomeComponent
-  }
-}
+export default { components: { 
+  Footer,
+  HomeComponent,
+ } };
 </script>
 
-<style>
+<style lang="scss">
+  @import url("../src/styles/fonts.scss");
   body {
     margin: 0;
-    height: 100%;
   }
 </style>
