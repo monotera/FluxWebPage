@@ -11,18 +11,19 @@
 
 </template>
 
-<style>
+<style lang="scss">
     #inicio-component {
         width: 100%;
         height: 100vh;
         padding-top: 1px;
-        background-image: url("https://static.nationalgeographic.es/files/styles/image_3200/public/parkour-adventures-dubai.jpg?w=1900&h=1267");
+        background-image: url('../../../assets/parkour-wallpaper.jpg');
         background-size: cover;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
+    /* Titutlo principal */
     h1 {
         display: inline-block;
         margin-top: -70px;
@@ -32,7 +33,9 @@
         width: 500px;
         font-size: 110px;
         letter-spacing: -0.04em;
+        color: #fff;
     }
+    /* Subtitulo */
     .subtitle {
         width: 500px;
         display: flex;
@@ -40,6 +43,7 @@
         align-items: center;
         width: 200px;
         margin-bottom: 30px;
+        color: #fff;
     }
     .subtitle h4 {
         font-family: 'Montserrat', sans-serif;
@@ -48,12 +52,12 @@
         text-align: center;
     }
     .point {
-        background-color: black;
+        background-color: #fff;
         width: 10px;
         height: 10px;
         border-radius: 50%;
     }
-
+    /* Boton principal */
     button {
         padding: 10px 20px;
         border: 3px solid #fff;
@@ -73,10 +77,18 @@
         width: 327px;
         margin-bottom: 75px;
     }
+
+    /* Media query */
+    
 </style>
 
 <script>
+const wallpaper = require('../../../assets/parkour-wallpaper.jpg')
 export default {
-    
+    data() {
+        return {
+            wallpaper
+        }
+    }
 }
 </script>

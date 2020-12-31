@@ -1,14 +1,14 @@
 <template>
   <div>
-    <inicioComponent></inicioComponent>
+    <HomeComponent></HomeComponent>
   </div>
 </template>
 
 <script>
-import inicioComponent from './components/Inicio.vue'
+import HomeComponent from './components/Home.vue'
 export default {
   components: {
-    inicioComponent
+    HomeComponent
   }
 }
 </script>
