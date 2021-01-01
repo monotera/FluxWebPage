@@ -1,41 +1,55 @@
 <template>
   <footer>
-    <div class="footer-leftSection">
-      <p class="footer-title">@FLUXACADEMY</p>
-      <p>
-        @FLUXACADEMY Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a
-        viverra magna. Maecenas vitae est nunc. Phasellus vitae odio posuere, cursus purus
-        id, faucibus metus. Cras posuere porttitor elit. Etiam dignissim, purus nec
-        suscipit pretium.
-      </p>
-    </div>
-    <div class="footer-middleSection">
-      <p class="footer-title">CONTÁCTANOS</p>
-      <p>
-        PHONE: 312-323-3323 <br />
-        EMAIL: flux@prueba.com <br />WHATSAPP: Click aquí
-      </p>
-    </div>
-    <div class="footer-rightSection">
-      <p class="footer-title">Siguenos</p>
-      <div class="footer-icons">
-        <a href="https://github.com/monotera/FluxWebPage"
-          ><i class="fab fa-facebook fa-lg"></i
-        ></a>
-        <a href="https://github.com/monotera/FluxWebPage">
-          <i class="fab fa-instagram fa-lg"></i>
-        </a>
-        <a href="https://github.com/monotera/FluxWebPage">
-          <i class="fab fa-youtube fa-lg"></i>
-        </a>
-        <a href="https://github.com/monotera/FluxWebPage">
-          <i class="fab fa-github fa-lg"></i>
-        </a>
+    <div class="footer-mainSection">
+      <div class="footer-leftSection">
+        <p class="footer-title">@FLUXACADEMY</p>
+        <p>
+          @FLUXACADEMY Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a
+          viverra magna. Maecenas vitae est nunc. Phasellus vitae odio posuere, cursus
+          purus id, faucibus metus. Cras posuere porttitor elit. Etiam dignissim, purus
+          nec suscipit pretium.
+        </p>
+      </div>
+      <div class="footer-middleSection">
+        <p class="footer-title">CONTÁCTANOS</p>
+        <p>
+          TELÉFONO: +57 312-578-4791 <br />
+          EMAIL: flux@prueba.com <br />WHATSAPP:
+          <a
+            class="footer-whatsAppLink"
+            href="https://api.whatsapp.com/send?phone=+57 312 578 4791&text=Hola%20me%20gustaría%20saber%20más"
+          >
+            Click aquí
+          </a>
+        </p>
+      </div>
+      <div class="footer-rightSection">
+        <p class="footer-title">Siguenos</p>
+        <div class="footer-icons">
+          <a href="https://www.facebook.com/pg/Flux-academy-103864354337166/posts/"
+            ><i class="fab fa-facebook fa-lg"></i
+          ></a>
+          <a href="https://www.instagram.com/flux.parkour/">
+            <i class="fab fa-instagram fa-lg"></i>
+          </a>
+          <a href="https://www.youtube.com/user/PlusParkour">
+            <i class="fab fa-youtube fa-lg"></i>
+          </a>
+          <a href="https://github.com/monotera/FluxWebPage">
+            <i class="fab fa-github fa-lg"></i>
+          </a>
+        </div>
       </div>
     </div>
     <p class="footer-copyRight">
-      2020 Flux Academy by <a href="https://github.com/Manuel-2011">Manuel Mosquera</a> y
-      <a href="https://github.com/monotera">Nelson Mosquera</a>
+      2020 Flux Academy by
+      <a class="footer-copyRightLink" href="https://github.com/Manuel-2011"
+        >Manuel Mosquera</a
+      >
+      y
+      <a class="footer-copyRightLink" href="https://github.com/monotera"
+        >Nelson Mosquera</a
+      >
     </p>
   </footer>
 </template>
@@ -46,7 +60,11 @@ export default {};
 * {
   margin-bottom: 0.5rem;
   text-align: center;
+  @media screen and (min-width: $breakpoint-desktop) {
+    text-align: start;
+  }
 }
+
 footer {
   color: white;
   background: black;
@@ -56,13 +74,26 @@ footer {
   padding: 0;
   width: 100%;
 
+  .footer-mainSection {
+    @media screen and (min-width: $breakpoint-desktop) {
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+      align-items: flex-start;
+    }
+  }
+
   .footer-title {
     font-family: "fontMontserratBold", sans-serif;
   }
 
   .footer-copyRight {
     font-family: "fontMontserratSemiBold", sans-serif;
-    padding-bottom: 0.8rem;
+    padding: 0.8rem;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+      text-align: center;
+    }
   }
 
   .footer-leftSection,
@@ -73,18 +104,59 @@ footer {
     align-items: center;
     margin: 0.5rem;
     padding: 0.8rem;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+      align-items: flex-start;
+    }
   }
+
+  .footer-leftSection {
+    @media screen and (min-width: $breakpoint-desktop) {
+      width: 20%;
+    }
+  }
+
   .footer-rightSection {
     display: flex;
     flex-direction: column;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+      width: 20%;
+      align-items: center;
+    }
   }
+
   .footer-icons {
     display: flex;
     height: 0;
     justify-content: space-evenly;
     width: 100%;
-    @media screen and (min-width: $breakpoint-tablet) {
+
+    @media screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
       width: 40%;
+    }
+  }
+
+  .footer-copyRightLink,
+  .footer-whatsAppLink {
+    &:hover {
+      color: lightseagreen;
+      border-bottom: 1px solid;
+    }
+  }
+
+  i {
+    @media screen and (min-width: $breakpoint-desktop) {
+      font-size: 2vw;
+      padding: 0 2rem;
+    }
+
+    @media screen and (min-width: $breakpoint-desktopLarge) {
+      font-size: 1vw;
+    }
+
+    &:hover {
+      color: lightseagreen;
     }
   }
 }
