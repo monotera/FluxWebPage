@@ -23,6 +23,9 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        @media (max-width: $breakpoint-columns) {
+            font-size: 5px;
+        }
     }
     /* Titutlo principal */
     h1 {
@@ -45,6 +48,9 @@
         width: 20em;
         margin-bottom: 30px;
         color: $main-font-color;
+        @media (max-width: $breakpoint-columns) {
+            font-size: 2em;
+        }
     }
     .subtitle h4 {
         font-family: 'headers-font', sans-serif;
@@ -66,26 +72,17 @@
         cursor: pointer;
         font-family: 'headers-font';
         transition: 0.5s;
-        font-size: 10px;    
+        font-size: 10px;
+        &:hover {
+            background-color: $secondary-background-color;
+            color: $secondary-font-color;
+        }
     }
-    button:hover {
-        background-color: $secondary-background-color;
-        color: $secondary-font-color;
-    }
+
     #principal-button {
         font-size: 2em;
         width: 16em;
         margin-bottom: 75px;
-    }
-
-    /* Media query mobile view */
-    @media (max-width: $breakpoint-columns) {
-        #home-component {
-            font-size: 5px;
-        }
-        .subtitle h4 {
-            font-size: 2em;
-        }
     }
     
 </style>
