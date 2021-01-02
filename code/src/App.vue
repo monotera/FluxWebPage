@@ -14,7 +14,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("../src/styles/fonts.scss");
 * {
   margin: 0;
 }

@@ -4,10 +4,10 @@
       <div class="footer-leftSection">
         <p class="footer-title">@FLUXACADEMY</p>
         <p>
-          @FLUXACADEMY Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a
-          viverra magna. Maecenas vitae est nunc. Phasellus vitae odio posuere, cursus
-          purus id, faucibus metus. Cras posuere porttitor elit. Etiam dignissim, purus
-          nec suscipit pretium.
+          @FLUXACADEMY Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Praesent a viverra magna. Maecenas vitae est nunc. Phasellus vitae
+          odio posuere, cursus purus id, faucibus metus. Cras posuere porttitor
+          elit. Etiam dignissim, purus nec suscipit pretium.
         </p>
       </div>
       <div class="footer-middleSection">
@@ -26,7 +26,8 @@
       <div class="footer-rightSection">
         <p class="footer-title">Siguenos</p>
         <div class="footer-icons">
-          <a href="https://www.facebook.com/pg/Flux-academy-103864354337166/posts/"
+          <a
+            href="https://www.facebook.com/pg/Flux-academy-103864354337166/posts/"
             ><i class="fab fa-facebook fa-lg"></i
           ></a>
           <a href="https://www.instagram.com/flux.parkour/">
@@ -66,10 +67,10 @@ export default {};
 }
 
 footer {
-  color: white;
-  background: black;
+  color: $main-font-color;
+  background: $main-background-color;
   display: inline-block;
-  font-family: "fontMontserratRegular", sans-serif;
+  font-family: $footer-main-font;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -84,11 +85,11 @@ footer {
   }
 
   .footer-title {
-    font-family: "fontMontserratBold", sans-serif;
+    font-family: $footer-title-font;
   }
 
   .footer-copyRight {
-    font-family: "fontMontserratSemiBold", sans-serif;
+    font-family: $footer-copyRigth-font;
     padding: 0.8rem;
 
     @media screen and (min-width: $breakpoint-desktop) {
@@ -140,7 +141,7 @@ footer {
   .footer-copyRightLink,
   .footer-whatsAppLink {
     &:hover {
-      color: lightseagreen;
+      color: $main-links-color;
       border-bottom: 1px solid;
     }
   }
@@ -156,7 +157,7 @@ footer {
     }
 
     &:hover {
-      color: lightseagreen;
+      color: $main-links-color;
     }
   }
 }
