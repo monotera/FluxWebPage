@@ -1,3 +1,4 @@
+$breakpoint-desktopLarge: 2500px;
 $breakpoint-desktop: 1024px;
 $breakpoint-mobile: 320px;
 $breakpoint-tablet: 768px;
@@ -8,3 +9,9 @@ $main-font-color: #fff;
 $main-background-color: #000;
 $secondary-font-color: #000;
 $secondary-background-color: #fff;
+$main-links-color: lightseagreen;
+
+// fonts
+$footer-main-font: "fontMontserratRegular", sans-serif;
+$footer-title-font: "fontMontserratBold", sans-serif;
+$footer-copyRigth-font: "fontMontserratSemiBold", sans-serif;
