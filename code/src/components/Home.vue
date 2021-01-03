@@ -11,7 +11,7 @@
 
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
     #home-component {
         font-size: 10px;
         width: 100%;
