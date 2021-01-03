@@ -1,22 +1,28 @@
 <template>
   <div>
     <HomeComponent></HomeComponent>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Footer from "../src/components/Footer";
-import HomeComponent from './components/Home.vue'
-export default { components: { 
-  Footer,
-  HomeComponent,
- } };
+import HomeComponent from "./components/Home.vue";
+export default {
+  components: {
+    Footer,
+    HomeComponent,
+  },
+};
 </script>
 
 <style lang="scss">
-  @import url("../src/styles/fonts.scss");
-  body {
-    margin: 0;
-  }
+
+body {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: $main-font-color;
+}
 </style>
