@@ -4,10 +4,10 @@
       <div class="footer-leftSection">
         <p class="footer-title">@FLUXACADEMY</p>
         <p>
-          @FLUXACADEMY Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Praesent a viverra magna. Maecenas vitae est nunc. Phasellus vitae
-          odio posuere, cursus purus id, faucibus metus. Cras posuere porttitor
-          elit. Etiam dignissim, purus nec suscipit pretium.
+          @FLUXACADEMY Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a
+          viverra magna. Maecenas vitae est nunc. Phasellus vitae odio posuere, cursus
+          purus id, faucibus metus. Cras posuere porttitor elit. Etiam dignissim, purus
+          nec suscipit pretium.
         </p>
       </div>
       <div class="footer-middleSection">
@@ -26,8 +26,7 @@
       <div class="footer-rightSection">
         <p class="footer-title">Siguenos</p>
         <div class="footer-icons">
-          <a
-            href="https://www.facebook.com/pg/Flux-academy-103864354337166/posts/"
+          <a href="https://www.facebook.com/pg/Flux-academy-103864354337166/posts/"
             ><i class="fab fa-facebook fa-lg"></i
           ></a>
           <a href="https://www.instagram.com/flux.parkour/">
@@ -72,7 +71,7 @@ footer {
   display: inline-block;
   font-family: $footer-main-font;
   margin: 0;
-  padding: 0;
+  padding: 3rem 0;
   width: 100%;
 
   .footer-mainSection {
