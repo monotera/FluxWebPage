@@ -22,6 +22,9 @@ export default {
 <style lang="scss">
 body {
   margin: 0;
+  @media screen and (max-width: $breakpoint-tablet) {
+    overflow-x: hidden;
+  }
 }
 a {
   text-decoration: none;
