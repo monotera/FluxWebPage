@@ -2,7 +2,7 @@
   <header class="header-wrapper">
     <nav class="header-wrapper-nav">
       <h1 class="header-logo">Flux Academy</h1>
-      <ul class="header-wrapper-ul" v-bind:class="{ navActive: isOpen }">
+      <ul class="header-wrapper-ul" :class="{ navActive: isOpen }">
         <li>
           <a
             @click="activate(1)"
@@ -38,7 +38,7 @@
         <li>
           <a><i class="fas fa-shopping-cart fa-lg"></i></a>
         </li>
-        <li v-if="windowWidth < 769" class="header-icons">
+        <li v-if="windowWidth <= 768" class="header-icons">
           <a href="https://www.facebook.com/pg/Flux-academy-103864354337166/posts/"
             ><i class="fab fa-facebook fa-lg"></i
           ></a>
@@ -54,7 +54,7 @@
         class="burger"
         @click="
           navSlide();
-          open();
+          openMenu();
         "
       >
         <div class="line1" v-bind:class="{ rotate1: isOpen }"></div>
@@ -77,15 +77,14 @@ export default {
   methods: {
     setWindowWidth() {
       this.windowWidth = window.innerWidth;
-      console.log(this.windowWidth);
     },
-    activate: function (el) {
+    activate(el) {
       this.active_el = el;
     },
-    open: function () {
+    openMenu() {
       this.isOpen ? (this.isOpen = false) : (this.isOpen = true);
     },
-    navSlide: function () {
+    navSlide() {
       const navLinks = document.querySelectorAll(".header-wrapper-ul li");
       navLinks.forEach((link, index) => {
         if (!link.style.animation)
@@ -93,23 +92,48 @@ export default {
         else link.style.animation = "";
       });
     },
+    reset() {
+      if (this.isOpen === true) {
+        this.isOpen = false;
+        const navLinks = document.querySelectorAll(".header-wrapper-ul li");
+        navLinks.forEach((link) => {
+          link.style.animation = "";
+        });
+      }
+    },
   },
   created() {
     this.setWindowWidth();
     window.addEventListener("resize", () => {
       this.setWindowWidth();
     });
+    window.addEventListener("scroll", this.reset);
   },
 };
 </script>
 
 <style lang="scss">
+i {
+  cursor: pointer;
+}
+
 .header-wrapper {
-  background-color: black;
-  color: white;
+  background-color: $secondary-font-color;
+  color: $main-font-color;
   position: sticky;
   top: 0;
 }
+
+.header-logo {
+  flex: 2 1;
+  font-family: $nav-tittle-font;
+
+  @media screen and (max-width: $breakpoint-desktopSmall) and (min-width: $breakpoint-tablet) {
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+}
+
 .header-wrapper-nav {
   align-items: center;
   display: flex;
@@ -119,87 +143,99 @@ export default {
   min-height: 10vh;
   padding: 2rem;
   width: 90%;
+
   @media screen and (max-width: $breakpoint-tablet) {
-    padding: 2rem 1rem;
     flex-flow: nowrap;
+    padding: 2rem 1rem;
+  }
+
+  @media screen and (max-width: $breakpoint-desktopSmall) and (min-width: $breakpoint-tablet) {
+    display: block;
   }
 }
+
 .header-wrapper-ul {
   align-items: center;
   display: flex;
   flex: 1 1;
   justify-content: space-around;
   list-style: none;
+
   @media screen and (max-width: $breakpoint-tablet) {
-    position: absolute;
-    right: 0;
-    height: 90vh;
-    top: 10vh;
-    background-color: black;
+    align-items: center;
+    background-color: $main-background-color;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 50%;
+    height: 90vh;
+    position: absolute;
+    right: 0;
+    top: 10vh;
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
+    width: 50%;
 
     li {
       opacity: 0;
     }
   }
+
   a {
     padding: 3rem;
     transition: 0.2s ease-in;
+
+    @media screen and (max-width: $breakpoint-desktopSmall) and (min-width: $breakpoint-tablet) {
+      padding: 0;
+    }
   }
+
   a:hover {
-    color: lightseagreen;
+    color: $main-links-color;
     transition: 0.2s ease-in;
   }
+
   .header-icons {
     display: flex;
+
     a {
       padding: 0 0.9rem;
     }
   }
 }
 
-.header-logo {
-  flex: 2 1;
-  font-family: fontLogo, sans-serif;
-  @media screen and (max-width: $breakpoint-desktopSmall) and (min-width: $breakpoint-tablet) {
-    text-align: center;
-    padding-bottom: 1rem;
-  }
-}
-
 .burger {
   display: none;
+
   @media screen and (max-width: $breakpoint-tablet) {
     display: block;
     cursor: pointer;
   }
 }
+
 .burger div {
   width: 28px;
   height: 3px;
-  background-color: white;
+  background-color: $main-font-color;
   margin: 5px;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 //Dynamic classes and animation
 .active {
   color: $main-links-color;
 }
+
 .rotate1 {
   transform: rotate(-45deg) translate(-5px, 6px);
 }
+
 .rotate2 {
   opacity: 0;
 }
+
 .rotate3 {
   transform: rotate(45deg) translate(-5px, -6px);
 }
+
 .navActive {
   transform: translateX(0);
 }
