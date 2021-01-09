@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <v-app>
     <HomeComponent></HomeComponent>
     <Gallery />
     <Footer />
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -25,6 +25,6 @@ body {
 }
 a {
   text-decoration: none;
-  color: $main-font-color;
+  --v-anchor-base: $main-font-color;
 }
 </style>
