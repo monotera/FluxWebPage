@@ -1,6 +1,7 @@
 <template>
   <div>
     <HomeComponent></HomeComponent>
+    <Intro />
     <Footer />
   </div>
 </template>
@@ -8,10 +9,12 @@
 <script>
 import Footer from "../src/components/Footer";
 import HomeComponent from "./components/Home.vue";
+import Intro from "./components/Intro"
 export default {
   components: {
     Footer,
     HomeComponent,
+    Intro,
   },
 };
 </script>
