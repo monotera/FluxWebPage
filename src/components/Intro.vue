@@ -52,6 +52,14 @@
         flex-direction: column;
         align-items: center;
         box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+        @media (min-width: $breakpoint-tablet) {
+            width: 100%;
+        }
+        @media (min-width: $breakpoint-desktop) {
+            width: 100%;
+            margin: 0;
+            height: 100%;
+        }
         .section-header {
             margin-bottom: 10px;
             font-family: $section-title-font;
@@ -87,14 +95,13 @@
                 height: 335px;
             }
         }
-        @media (min-width: $breakpoint-desktop) {
-            width: 100%;
-            margin: 0;
-            height: 100%;
-        }
     }
     #intro-parkour {
+        @media (min-width: $breakpoint-tablet) {
+            width: 90%;
+        }
         @media (min-width: $breakpoint-desktop) {
+            width: 100%;
             grid-area: main;
             .section-body,
             iframe {
@@ -104,12 +111,19 @@
     }
     .aside {
         display: grid;
-        grid-template-rows: 1fr 1fr;
         justify-items: center;
         width: 100%;
+        @media (min-width: $breakpoint-tablet) {
+            width: 90%;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+        }
         @media (min-width: $breakpoint-desktop) {
+            width: 100%;
             height: 100%;
             grid-area: aside;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: auto;
             row-gap: 20px;
         }
         .section-header {
