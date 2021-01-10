@@ -4,10 +4,7 @@
       <h1 class="header-logo">Flux Academy</h1>
       <ul class="header-wrapper-ul" :class="{ navActive: isOpen }">
         <li>
-          <a
-            @click="activate(1)"
-            :class="{ active: active_el == 1 }"
-            href="#home-component-test"
+          <a @click="activate(1)" :class="{ active: active_el == 1 }" href="#intro"
             >Inicio</a
           >
         </li>
@@ -15,7 +12,7 @@
           <a
             @click="activate(2)"
             :class="{ active: active_el == 2 }"
-            href="#clases-component"
+            href="#class-component"
             >Clases</a
           >
         </li>
@@ -23,7 +20,7 @@
           <a
             @click="activate(3)"
             :class="{ active: active_el == 3 }"
-            href="#galeria-component"
+            href="#gallery-component"
             >Galería</a
           >
         </li>
@@ -31,7 +28,7 @@
           <a
             @click="activate(4)"
             :class="{ active: active_el == 4 }"
-            href="#contacto-component"
+            href="#contact-component"
             >Contacto</a
           >
         </li>
