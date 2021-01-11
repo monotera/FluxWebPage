@@ -41,7 +41,7 @@
             </v-carousel>
         </div>
         <div v-if="windowWidth<768" id="categories">
-            <v-carousel v-model="model"
+            <v-carousel 
             height="500">
                 <v-carousel-item
                 v-for="(slide, i) in slides"
@@ -155,10 +155,6 @@ import CategoryCarousel from './CarouselCard.vue'
     },
     data () {
       return {
-        model: 0,
-        colors: [
-          
-        ],
         slides: [
           'kids',
           'jovenes',
