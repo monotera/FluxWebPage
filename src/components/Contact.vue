@@ -1,7 +1,7 @@
 <template>
   <div id="contact">
     <address class="contact-section">
-      <h1 class="tittle">CONTACTANOS</h1>
+      <h1 class="contact-tittle">CONTÁCTANOS</h1>
       <div class="contact-main-section">
         <div class="contact-phone">
           <i class="fas fa-phone-alt"></i>
@@ -14,7 +14,7 @@
       </div>
     </address>
     <div class="question-section">
-      <h1>TIENES ALGUNA DUDA?</h1>
+      <h1 class="contact-tittle">TIENES ALGUNA DUDA?</h1>
       <form class="questions-main-section">
         <p class="question-title">Nombre *</p>
         <textField />
@@ -42,9 +42,15 @@ export default {
 <style lang="scss" scoped>
 #contact {
   background-color: $dark-theme-background;
-  color: white;
-  font-family: $footer-main-font;
+  color: $main-font-color;
+  font-family: $contact-main-font;
   padding: 4rem 1rem;
+
+  @media screen and (min-width: $breakpoint-desktop) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 .contact-section {
   box-sizing: border-box;
@@ -53,21 +59,39 @@ export default {
   background-color: $dark-theme-surface;
   border-radius: 10px;
   margin: 2rem 0;
-  background-color: gray;
+  background-color: $dark-theme-surface2;
   border-radius: 10px;
+
+  @media screen and (min-width: $breakpoint-desktop) {
+    width: 50%;
+    margin: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .contact-main-section {
     display: flex;
     padding: 2rem 0;
     justify-content: space-around;
+    @media screen and (min-width: $breakpoint-desktop) {
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+    }
   }
 
-  .tittle {
+  .contact-tittle {
     text-align: center;
     font-family: $footer-title-font;
     font-size: 1.2rem;
     padding: 1rem;
     @media screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
       font-size: 1.5rem;
+    }
+    @media screen and (min-width: $breakpoint-desktop) {
+      font-size: 2rem;
+      margin: 1rem 0;
     }
   }
 
@@ -81,30 +105,62 @@ export default {
     @media screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
       font-size: 1.3rem;
     }
+    @media screen and (min-width: $breakpoint-desktop) {
+      font-size: 1.8rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 25rem;
+      padding: 2rem 0;
+    }
     p {
       font-family: $footer-copyRigth-font;
       padding-top: 1rem;
+      @media screen and (min-width: $breakpoint-desktop) {
+        padding: 0;
+      }
+    }
+    i {
+      padding: 0 1rem;
+
+      @media screen and (min-width: $breakpoint-desktop) {
+        align-self: center;
+      }
     }
   }
 
   .contact-phone {
     border-right: 3px solid white;
+    @media screen and (min-width: $breakpoint-desktop) {
+      border-right: none;
+      border-top: 2px solid white;
+      border-bottom: 2px solid white;
+      padding: 3rem 0;
+    }
   }
 }
 
 .question-section {
   width: 100%;
   padding: 1rem;
-  background-color: gray;
+  background-color: $dark-theme-surface2;
   border-radius: 10px;
   margin: 2rem 0;
   display: flex;
   flex-direction: column;
-  h1 {
+  @media screen and (min-width: $breakpoint-desktop) {
+    width: 50%;
+    margin: 1.5rem;
+    font-size: 1.2rem;
+  }
+  .contact-tittle {
     text-align: center;
     font-family: $footer-title-font;
     font-size: 1.2rem;
     padding: 1rem;
+    @media screen and (min-width: $breakpoint-desktop) {
+      font-size: 1.5rem;
+    }
   }
   .question-title {
     margin-left: 12px;
@@ -128,6 +184,12 @@ export default {
     &:hover {
       background-color: $secondary-background-color;
       color: $secondary-font-color;
+    }
+    @media screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+      font-size: 1rem;
+    }
+    @media screen and (min-width: $breakpoint-desktop) {
+      font-size: 1.2rem;
     }
   }
 }
