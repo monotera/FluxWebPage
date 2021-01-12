@@ -1,10 +1,12 @@
 <template>
-  <div>
+  <v-app>
     <Header />
-    <HomeComponent></HomeComponent>
+    <HomeComponent />
     <Intro />
+    <Gallery />
+    <Contact />
     <Footer />
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -12,12 +14,17 @@ import Footer from "./components/Footer";
 import HomeComponent from "./components/Home.vue";
 import Header from "./components/Header.vue";
 import Intro from "./components/Intro";
+import Contact from "./components/Contact";
+import Gallery from "./components/Gallery.vue";
+
 export default {
   components: {
     Footer,
     HomeComponent,
     Header,
+    Gallery,
     Intro,
+    Contact,
   },
 };
 </script>
@@ -31,6 +38,6 @@ body {
 }
 a {
   text-decoration: none;
-  color: $main-font-color;
+  --v-anchor-base: $main-font-color;
 }
 </style>

@@ -117,8 +117,10 @@ i {
 .header-wrapper {
   background-color: $secondary-font-color;
   color: $main-font-color;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
+  z-index: 2;
 }
 
 .header-logo {
@@ -218,7 +220,7 @@ i {
 
 //Dynamic classes and animation
 .active {
-  color: $main-links-color;
+  color: $main-links-color !important;
 }
 
 .rotate1 {
