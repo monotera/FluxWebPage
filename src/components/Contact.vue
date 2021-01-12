@@ -17,11 +17,16 @@
       <h1 class="contact-tittle">TIENES ALGUNA DUDA?</h1>
       <form class="questions-main-section">
         <p class="question-title">Nombre *</p>
-        <textField />
+        <textField :length="12" :message="'Name'" :heigth="'1rem'" />
         <p class="question-title">Email *</p>
-        <textField />
+        <textField :length="12" :message="'Email'" :heigth="'1rem'" :rule="emailRules" />
         <p class="question-title">Mensaje *</p>
-        <textField />
+        <textField
+          :length="12"
+          :message="'Message'"
+          :heigth="'10rem'"
+          :rule="messageRules"
+        />
       </form>
       <div class="contact-button">
         <button type="submit">Enviar</button>
@@ -35,6 +40,21 @@ import textField from "./Text-field";
 export default {
   components: {
     textField,
+  },
+  data() {
+    return {
+      email: "",
+      emailRules: [
+        (v) => !!v || "E-mail is required",
+        (v) =>
+          /^(([^<>()[\]\\.,;:\s@']+(\.[^<>()\\[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+            v
+          ) || "E-mail must be valid",
+      ],
+      messageRules: [
+        (v) => (v || "").length <= 200 || "Description must be 200 characters or less",
+      ],
+    };
   },
 };
 </script>
