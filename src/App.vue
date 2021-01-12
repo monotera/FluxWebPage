@@ -1,19 +1,22 @@
 <template>
-  <div>
+  <v-app>
     <HomeComponent></HomeComponent>
     <Intro />
+    <Gallery />
     <Footer />
-  </div>
+  </v-app>
 </template>
 
 <script>
 import Footer from "../src/components/Footer";
 import HomeComponent from "./components/Home.vue";
+import Gallery from './components/Gallery.vue';
 import Intro from "./components/Intro"
 export default {
   components: {
     Footer,
     HomeComponent,
+    Gallery,
     Intro,
   },
 };
@@ -25,6 +28,6 @@ body {
 }
 a {
   text-decoration: none;
-  color: $main-font-color;
+  --v-anchor-base: $main-font-color;
 }
 </style>
