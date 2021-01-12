@@ -23,7 +23,7 @@
         <p class="question-title">Mensaje *</p>
         <textField />
       </form>
-      <div class="p">
+      <div class="contact-button">
         <button type="submit">Enviar</button>
       </div>
     </div>
@@ -53,42 +53,43 @@ export default {
   }
 }
 .contact-section {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 1rem;
   background-color: $dark-theme-surface;
   border-radius: 10px;
+  box-sizing: border-box;
   margin: 2rem 0;
-  background-color: $dark-theme-surface2;
-  border-radius: 10px;
+  padding: 1rem;
+  width: 100%;
 
   @media screen and (min-width: $breakpoint-desktop) {
-    width: 50%;
-    margin: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 1.5rem;
+    width: 50%;
   }
 
   .contact-main-section {
     display: flex;
-    padding: 2rem 0;
     justify-content: space-around;
+    padding: 2rem 0;
+
     @media screen and (min-width: $breakpoint-desktop) {
-      flex-direction: column;
       align-items: center;
+      flex-direction: column;
       padding: 0;
     }
   }
 
   .contact-tittle {
-    text-align: center;
-    font-family: $footer-title-font;
+    font-family: $contact-title-font;
     font-size: 1.2rem;
     padding: 1rem;
+    text-align: center;
+
     @media screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
       font-size: 1.5rem;
     }
+
     @media screen and (min-width: $breakpoint-desktop) {
       font-size: 2rem;
       margin: 1rem 0;
@@ -97,25 +98,29 @@ export default {
 
   .contact-phone,
   .contact-email {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     font-size: 0.9rem;
     width: 50%;
+
     @media screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
       font-size: 1.3rem;
     }
+
     @media screen and (min-width: $breakpoint-desktop) {
-      font-size: 1.8rem;
       display: flex;
+      font-size: 1.8rem;
       flex-direction: row;
       justify-content: center;
-      width: 25rem;
       padding: 2rem 0;
+      width: 25rem;
     }
+
     p {
-      font-family: $footer-copyRigth-font;
+      font-family: $contact-text-font;
       padding-top: 1rem;
+
       @media screen and (min-width: $breakpoint-desktop) {
         padding: 0;
       }
@@ -131,6 +136,7 @@ export default {
 
   .contact-phone {
     border-right: 3px solid white;
+
     @media screen and (min-width: $breakpoint-desktop) {
       border-right: none;
       border-top: 2px solid white;
@@ -141,53 +147,61 @@ export default {
 }
 
 .question-section {
-  width: 100%;
-  padding: 1rem;
-  background-color: $dark-theme-surface2;
+  background-color: $dark-theme-surface;
   border-radius: 10px;
-  margin: 2rem 0;
   display: flex;
   flex-direction: column;
+  margin: 2rem 0;
+  padding: 1rem;
+  width: 100%;
+
   @media screen and (min-width: $breakpoint-desktop) {
-    width: 50%;
-    margin: 1.5rem;
     font-size: 1.2rem;
+    margin: 1.5rem;
+    width: 50%;
   }
+
   .contact-tittle {
-    text-align: center;
-    font-family: $footer-title-font;
+    font-family: $contact-title-font;
     font-size: 1.2rem;
     padding: 1rem;
+    text-align: center;
+
     @media screen and (min-width: $breakpoint-desktop) {
       font-size: 1.5rem;
     }
   }
+
   .question-title {
     margin-left: 12px;
-    font-family: $footer-copyRigth-font;
+    font-family: $contact-text-font;
   }
-  .p {
-    width: 100%;
-    align-self: center;
+
+  .contact-button {
     text-align: center;
+    width: 100%;
   }
+
   button {
-    margin: auto;
-    padding: 0.5rem 2rem;
+    background-color: $main-background-color;
     border: 3px solid $main-font-color;
     color: $main-font-color;
-    background-color: $main-background-color;
     cursor: pointer;
-    font-family: "headers-font";
-    transition: 0.5s;
+    font-family: $contact-text-font;
     font-size: 0.8rem;
+    margin: auto;
+    padding: 0.5rem 2rem;
+    transition: 0.5s;
+
     &:hover {
       background-color: $secondary-background-color;
       color: $secondary-font-color;
     }
+
     @media screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
       font-size: 1rem;
     }
+
     @media screen and (min-width: $breakpoint-desktop) {
       font-size: 1.2rem;
     }
