@@ -3,6 +3,7 @@
     <Header />
     <HomeComponent />
     <Intro />
+    <Classes />
     <Gallery />
     <Contact />
     <Footer />
@@ -12,8 +13,9 @@
 <script>
 import Footer from "./components/Footer";
 import HomeComponent from "./components/Home.vue";
+import Intro from "./components/Intro"
+import Classes from "./components/Classes"
 import Header from "./components/Header.vue";
-import Intro from "./components/Intro";
 import Contact from "./components/Contact";
 import Gallery from "./components/Gallery.vue";
 
@@ -24,6 +26,7 @@ export default {
     Header,
     Gallery,
     Intro,
+    Classes,
     Contact,
   },
 };
