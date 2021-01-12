@@ -70,14 +70,14 @@
     }
     #button-reserve {
         color: $main-links-color;
-        font-family: $footer-title-font;
+        font-family: $section-button-font;
         font-size: 10.15px;
         @media (min-width: $breakpoint-desktop) {
             font-size: 15px;
         }
     }
     #card .v-card__title {
-        font-family: $footer-title-font;
+        font-family: $section-title-font;
         font-size: 18px;
         @media (min-width: $breakpoint-desktop) {
             font-size: 24px;
