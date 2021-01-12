@@ -1,5 +1,5 @@
 <template>
-  <div id="contact">
+  <div id="contact-component">
     <address class="contact-section">
       <h1 class="contact-tittle">CONTÁCTANOS</h1>
       <div class="contact-main-section">
@@ -60,7 +60,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#contact {
+#contact-component {
   background-color: $dark-theme-background;
   color: $main-font-color;
   font-family: $contact-main-font;
