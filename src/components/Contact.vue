@@ -143,6 +143,7 @@ export default {
 
       @media screen and (min-width: $breakpoint-desktop) {
         padding: 0;
+        margin: 0;
       }
     }
     i {
