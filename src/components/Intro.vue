@@ -3,11 +3,12 @@
     <section id="intro-parkour">
       <h2 class="section-header">¿Qué es parkour?</h2>
       <p class="section-body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet finibus
-        sem, a laoreet quam. Vivamus non orci vel eros bibendum gravida nec eget leo.
-        Donec nec euismod nibh. Curabitur lacinia erat non arcu sodales, ut fringilla
-        mauris fringilla. Vivamus neque felis, ornare eget volutpat eu, rhoncus in risus.
-        Morbi vitae augue vitae metus ornare tempus sit amet in nibh. Donec ac lacus leo.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet
+        finibus sem, a laoreet quam. Vivamus non orci vel eros bibendum gravida
+        nec eget leo. Donec nec euismod nibh. Curabitur lacinia erat non arcu
+        sodales, ut fringilla mauris fringilla. Vivamus neque felis, ornare eget
+        volutpat eu, rhoncus in risus. Morbi vitae augue vitae metus ornare
+        tempus sit amet in nibh. Donec ac lacus leo.
       </p>
       <iframe
         width="556"
@@ -21,21 +22,27 @@
       <section id="benefits">
         <h2 class="section-header">Beneficios</h2>
         <p class="section-body">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet finibus
-          sem, a laoreet quam. Vivamus non orci vel eros bibendum gravida nec eget leo.
-          Donec nec euismod nibh. Curabitur lacinia erat non arcu sodales, ut fringilla
-          mauris fringilla.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet
+          finibus sem, a laoreet quam. Vivamus non orci vel eros bibendum
+          gravida nec eget leo. Donec nec euismod nibh. Curabitur lacinia erat
+          non arcu sodales, ut fringilla mauris fringilla.
         </p>
       </section>
       <section id="classes">
         <h2 class="section-header">Clases</h2>
         <p class="section-body">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet finibus
-          sem, a laoreet quam. Vivamus non orci vel eros bibendum gravida nec eget leo.
-          Donec nec euismod nibh. Curabitur lacinia erat non arcu sodales, ut fringilla
-          mauris fring.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet
+          finibus sem, a laoreet quam. Vivamus non orci vel eros bibendum
+          gravida nec eget leo. Donec nec euismod nibh. Curabitur lacinia erat
+          non arcu sodales, ut fringilla mauris fring.
         </p>
-        <button id="button-classes">CONOCE MÁS</button>
+        <button
+          id="button-classes"
+          @click="function () {window.location = '/#class-component'}"
+          
+        >
+          CONOCE MÁS
+        </button>
       </section>
     </div>
   </div>
@@ -44,14 +51,21 @@
 <style lang="scss" scoped>
 #intro {
   padding: 50px 0;
+  padding-top: 110px;
   background-color: $dark-theme-background;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: $main-font-color;
+  @media (min-width: $breakpoint-tablet) {
+    padding-top: 140px;
+  }
   @media (min-width: $breakpoint-desktop) {
-    padding: 50px 40px;
-    height: 920px;
+    padding-top: 110px;
+    padding-left: 40px;
+    padding-right: 40px;
+    height: 100vh;
+    overflow-y: hidden;
     display: grid;
     grid-template-columns: 7fr 5fr;
     grid-template-areas: "main aside";
@@ -168,5 +182,14 @@ button {
 </style>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      window: "",
+    };
+  },
+  created() {
+    this.window = window;
+  },
+};
 </script>

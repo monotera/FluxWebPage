@@ -11,72 +11,72 @@
 </template>
 
 <style lang="scss" scoped>
-#home-component {
-  font-size: 10px;
-  width: 100%;
-  height: 100vh;
-  padding-top: 10rem;
-  background-image: url("../assets/images/parkour-wallpaper.jpg");
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  @media (max-width: $breakpoint-columns) {
-    font-size: 5px;
-  }
-}
-/* Titutlo principal */
-h1 {
-  display: inline-block;
-  margin-top: -70px;
-  margin-bottom: -5px;
-  font-family: "main-header", sans-serif;
-  text-align: center;
-  width: 6em;
-  font-size: 11em;
-  letter-spacing: -0.04em;
-  color: $main-font-color;
-}
-/* Subtitulo */
-.subtitle {
-  width: 50em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 20em;
-  margin-bottom: 30px;
-  color: $main-font-color;
-  @media (max-width: $breakpoint-columns) {
-    font-size: 2em;
-  }
-}
-.subtitle h4 {
-  font-family: "headers-font", sans-serif;
-  font-size: 1.5em;
-  text-align: center;
-}
-.point {
-  background-color: $main-font-color;
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-}
-/* Boton principal */
-button {
-  padding: 10px 20px;
-  border: 3px solid $main-font-color;
-  color: $main-font-color;
-  background-color: $main-background-color;
-  cursor: pointer;
-  font-family: "headers-font";
-  transition: 0.5s;
-  font-size: 10px;
-  &:hover {
-    background-color: $secondary-background-color;
-    color: $secondary-font-color;
-  }
-}
+    #home-component {
+        font-size: 10px;
+        width: 100%;
+        height: 100vh;
+        padding-top: 1px;
+        background-image: url('../assets/images/parkour-wallpaper.jpg');
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @media (max-width: $breakpoint-columns) {
+            font-size: 5px;
+        }
+    }
+    /* Titutlo principal */
+    h1 {
+        display: inline-block;
+        margin-top: -70px;
+        margin-bottom: -5px;
+        font-family: $section-main-title-font;
+        text-align: center;
+        width: 6em;
+        font-size: 11em;
+        letter-spacing: -0.04em;
+        color: $main-font-color;
+    }
+    /* Subtitulo */
+    .subtitle {
+        width: 50em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 20em;
+        margin-bottom: 30px;
+        color: $main-font-color;
+        @media (max-width: $breakpoint-columns) {
+            font-size: 2em;
+        }
+    }
+    .subtitle h4 {
+        font-family: $section-title-font;
+        font-size: 1.5em;
+        text-align: center;
+    }
+    .point {
+        background-color: $main-font-color;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+    }
+    /* Boton principal */
+    button {
+        padding: 10px 20px;
+        border: 3px solid $main-font-color;
+        color: $main-font-color;
+        background-color: $main-background-color;
+        cursor: pointer;
+        font-family: $section-button-font;
+        transition: 0.5s;
+        font-size: 10px;
+        &:hover {
+            background-color: $secondary-background-color;
+            color: $secondary-font-color;
+        }
+    }
 
 #principal-button {
   font-size: 2em;

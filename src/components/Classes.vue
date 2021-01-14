@@ -50,11 +50,16 @@
 <style lang="scss" scoped>
     #class-component {
         padding: 50px 0;
-        background-color: $dark-theme-background;
+        padding-top: 110px;
+        background-color: $dark-theme-background2;
         min-height: 100vh;
         color: $main-font-color;
         @media (min-width: $breakpoint-tablet) {
             padding: 50px 40px;
+            padding-top: 140px;
+        }
+        @media (min-width: $breakpoint-desktop) {
+            padding-top: 110px;
         }
     }
     .main-header {
