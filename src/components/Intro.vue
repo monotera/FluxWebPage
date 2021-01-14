@@ -19,7 +19,7 @@
                 <p class="section-body">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet finibus sem, a laoreet quam. Vivamus non orci vel eros bibendum gravida nec eget leo. Donec nec euismod nibh. Curabitur lacinia erat non arcu sodales, ut fringilla mauris fring.
                 </p>
-                <button id="button-classes">CONOCE MÁS</button>
+                <button id="button-classes" @click="function () {window.location = '/#class-component'}">CONOCE MÁS</button>
             </section>
         </div>
     </div>
@@ -28,13 +28,15 @@
 <style lang="scss" scoped>
     #intro {
         padding: 50px 0;
+        padding-top: 110px;
         background-color: $dark-theme-background;
         display: flex;
         flex-direction: column;
         align-items: center;
         color: $main-font-color;
         @media (min-width: $breakpoint-desktop) {
-            padding: 50px 40px;
+            padding-left: 40px;
+            padding-right: 40px;
             height: 100vh;
             overflow-y: hidden;
             display: grid;
@@ -154,6 +156,13 @@
 
 <script>
 export default {
-    
+    data() {
+        return {
+            window: '',
+        }
+    },
+    created() {
+        this.window = window;
+    }
 }
 </script>

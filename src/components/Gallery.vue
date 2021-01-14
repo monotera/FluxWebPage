@@ -77,7 +77,8 @@
 <style lang="scss" scoped>
     
     #gallery-component {
-        padding: 50px 0;
+        padding-top: 110px;
+        padding-bottom: 50px;
         display: flex;
         flex-direction: column;
         align-items: center;
