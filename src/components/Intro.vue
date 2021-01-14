@@ -35,7 +35,8 @@
         color: $main-font-color;
         @media (min-width: $breakpoint-desktop) {
             padding: 50px 40px;
-            height: 920px;
+            height: 100vh;
+            overflow-y: hidden;
             display: grid;
             grid-template-columns: 7fr 5fr;
             grid-template-areas: "main aside";

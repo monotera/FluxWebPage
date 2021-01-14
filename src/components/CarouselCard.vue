@@ -66,7 +66,7 @@
   
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 // general styles
 iframe {
   max-width: 100%;

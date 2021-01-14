@@ -32,7 +32,7 @@
         display: inline-block;
         margin-top: -70px;
         margin-bottom: -5px;
-        font-family: 'main-header', sans-serif;
+        font-family: $section-main-title-font;
         text-align: center;
         width: 6em;
         font-size: 11em;
@@ -53,7 +53,7 @@
         }
     }
     .subtitle h4 {
-        font-family: 'headers-font', sans-serif;
+        font-family: $section-title-font;
         font-size: 1.5em;
         text-align: center;
     }
@@ -70,7 +70,7 @@
         color: $main-font-color;
         background-color: $main-background-color;
         cursor: pointer;
-        font-family: 'headers-font';
+        font-family: $section-button-font;
         transition: 0.5s;
         font-size: 10px;
         &:hover {
