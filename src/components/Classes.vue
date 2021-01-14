@@ -51,7 +51,7 @@
     #class-component {
         padding: 50px 0;
         padding-top: 110px;
-        background-color: $dark-theme-background;
+        background-color: $dark-theme-background2;
         min-height: 100vh;
         color: $main-font-color;
         @media (min-width: $breakpoint-tablet) {

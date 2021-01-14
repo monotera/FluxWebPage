@@ -61,7 +61,7 @@ export default {
 
 <style lang="scss" scoped>
 #contact-component {
-  background-color: $dark-theme-background;
+  background-color: $dark-theme-background2;
   color: $main-font-color;
   font-family: $contact-main-font;
   padding: 4rem 1rem;
