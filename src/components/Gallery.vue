@@ -1,5 +1,6 @@
 <template>
     <div id="gallery-component">
+        <h2 class="main-header">GALERÍA</h2>
         <div id="main-carousel">
             <v-carousel
                 cycle
@@ -74,13 +75,14 @@
 </template>
 
 <style lang="scss" scoped>
+    
     #gallery-component {
         padding: 50px 0;
         display: flex;
         flex-direction: column;
         align-items: center;
         background-color: $dark-theme-background;
-        // general styles
+        color: $main-font-color;
         iframe {
         max-width: 100%;
         }
@@ -88,6 +90,16 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        }
+    }
+    .main-header {
+        font-family: $section-main-title-font;
+        font-size: 30px;
+        margin: auto;
+        margin-bottom: 100px;
+        text-align: center;
+        @media (min-width: $breakpoint-desktop) {
+            font-size: 72px;
         }
     }
     #main-carousel {
