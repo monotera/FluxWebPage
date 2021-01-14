@@ -130,6 +130,9 @@ i {
 .scrolledOpacity {
   opacity: 0.8;
   transition: 0.4s ease-out;
+  &:hover {
+    opacity: 1;
+  }
 }
 .header-logo {
   flex: 2 1;
