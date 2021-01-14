@@ -1,14 +1,13 @@
 <template>
-    <div id="home-component">
-        <h1>FLUX ACADEMY</h1>
-        <div class="subtitle">
-            <div class="point"></div>
-            <h4>KEEP MOVING</h4>
-            <div class="point"></div>
-        </div>
-        <button id="principal-button">IR A PRODUCTOS</button>
+  <div id="home-component">
+    <h1>FLUX ACADEMY</h1>
+    <div class="subtitle">
+      <div class="point"></div>
+      <h4>KEEP MOVING</h4>
+      <div class="point"></div>
     </div>
-
+    <button id="principal-button">IR A PRODUCTOS</button>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -79,16 +78,13 @@
         }
     }
 
-    #principal-button {
-        font-size: 2em;
-        width: 16em;
-        margin-bottom: 75px;
-    }
-    
+#principal-button {
+  font-size: 2em;
+  width: 16em;
+  margin-bottom: 75px;
+}
 </style>
 
 <script>
-export default {
-    
-}
+export default {};
 </script>
