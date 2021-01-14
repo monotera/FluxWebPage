@@ -84,6 +84,12 @@
         align-items: center;
         background-color: $dark-theme-background;
         color: $main-font-color;
+        @media (min-width: $breakpoint-tablet) {
+            padding-top: 140px;
+        }
+        @media (min-width: $breakpoint-desktop) {
+            padding-top: 110px;
+        }
         iframe {
         max-width: 100%;
         }

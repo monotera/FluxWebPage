@@ -34,7 +34,11 @@
         flex-direction: column;
         align-items: center;
         color: $main-font-color;
+        @media (min-width: $breakpoint-tablet) {
+           padding-top: 140px; 
+        }
         @media (min-width: $breakpoint-desktop) {
+            padding-top: 110px;
             padding-left: 40px;
             padding-right: 40px;
             height: 100vh;

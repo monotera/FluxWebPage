@@ -56,6 +56,9 @@
         color: $main-font-color;
         @media (min-width: $breakpoint-tablet) {
             padding: 50px 40px;
+            padding-top: 140px;
+        }
+        @media (min-width: $breakpoint-desktop) {
             padding-top: 110px;
         }
     }
