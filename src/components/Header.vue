@@ -4,36 +4,37 @@
       <h1 class="header-logo">Flux Academy</h1>
       <ul class="header-wrapper-ul" :class="{ navActive: isOpen }">
         <li>
-          <a @click="activate(1)" :class="{ active: active_el == 1 }" href="#intro"
+          <a
+            @click="activate(1), scrollAnimation('#intro')"
+            :class="{ active: active_el == 1 }"
             >Inicio</a
           >
         </li>
         <li>
           <a
-            @click="activate(2)"
+            @click="activate(2), scrollAnimation('#class-component')"
             :class="{ active: active_el == 2 }"
-            href="#class-component"
             >Clases</a
           >
         </li>
         <li>
           <a
-            @click="activate(3)"
+            @click="activate(3), scrollAnimation('#gallery-component')"
             :class="{ active: active_el == 3 }"
-            href="#gallery-component"
             >Galería</a
           >
         </li>
         <li>
           <a
-            @click="activate(4)"
+            @click="activate(4), scrollAnimation('#contact-component')"
             :class="{ active: active_el == 4 }"
-            href="#contact-component"
             >Contacto</a
           >
         </li>
         <li>
-          <a><i class="fas fa-shopping-cart fa-lg"></i></a>
+          <router-link to="/store"
+            ><i class="fas fa-shopping-cart fa-lg"></i
+          ></router-link>
         </li>
         <li v-if="windowWidth <= 768" class="header-icons">
           <a href="https://www.facebook.com/pg/Flux-academy-103864354337166/posts/"
@@ -94,6 +95,11 @@ export default {
       if (window.scrollY == 0) {
         this.isScrolled = false;
       } else this.isScrolled = true;
+    },
+    scrollAnimation(section) {
+      document.querySelector(section).scrollIntoView({
+        behavior: "smooth",
+      });
     },
   },
   created() {

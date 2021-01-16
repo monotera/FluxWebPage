@@ -3,12 +3,11 @@
     <section id="intro-parkour">
       <h2 class="section-header">¿Qué es parkour?</h2>
       <p class="section-body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet
-        finibus sem, a laoreet quam. Vivamus non orci vel eros bibendum gravida
-        nec eget leo. Donec nec euismod nibh. Curabitur lacinia erat non arcu
-        sodales, ut fringilla mauris fringilla. Vivamus neque felis, ornare eget
-        volutpat eu, rhoncus in risus. Morbi vitae augue vitae metus ornare
-        tempus sit amet in nibh. Donec ac lacus leo.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet finibus
+        sem, a laoreet quam. Vivamus non orci vel eros bibendum gravida nec eget leo.
+        Donec nec euismod nibh. Curabitur lacinia erat non arcu sodales, ut fringilla
+        mauris fringilla. Vivamus neque felis, ornare eget volutpat eu, rhoncus in risus.
+        Morbi vitae augue vitae metus ornare tempus sit amet in nibh. Donec ac lacus leo.
       </p>
       <iframe
         width="556"
@@ -22,27 +21,21 @@
       <section id="benefits">
         <h2 class="section-header">Beneficios</h2>
         <p class="section-body">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet
-          finibus sem, a laoreet quam. Vivamus non orci vel eros bibendum
-          gravida nec eget leo. Donec nec euismod nibh. Curabitur lacinia erat
-          non arcu sodales, ut fringilla mauris fringilla.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet finibus
+          sem, a laoreet quam. Vivamus non orci vel eros bibendum gravida nec eget leo.
+          Donec nec euismod nibh. Curabitur lacinia erat non arcu sodales, ut fringilla
+          mauris fringilla.
         </p>
       </section>
       <section id="classes">
         <h2 class="section-header">Clases</h2>
         <p class="section-body">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet
-          finibus sem, a laoreet quam. Vivamus non orci vel eros bibendum
-          gravida nec eget leo. Donec nec euismod nibh. Curabitur lacinia erat
-          non arcu sodales, ut fringilla mauris fring.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet finibus
+          sem, a laoreet quam. Vivamus non orci vel eros bibendum gravida nec eget leo.
+          Donec nec euismod nibh. Curabitur lacinia erat non arcu sodales, ut fringilla
+          mauris fring.
         </p>
-        <button
-          id="button-classes"
-          @click="function () {window.location = '/#class-component'}"
-          
-        >
-          CONOCE MÁS
-        </button>
+        <button id="button-classes" @click="scrollAnimation()">CONOCE MÁS</button>
       </section>
     </div>
   </div>
@@ -187,6 +180,13 @@ export default {
     return {
       window: "",
     };
+  },
+  methods: {
+    scrollAnimation() {
+      document.querySelector("#class-component").scrollIntoView({
+        behavior: "smooth",
+      });
+    },
   },
   created() {
     this.window = window;
