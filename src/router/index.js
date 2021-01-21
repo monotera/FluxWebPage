@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Main from '../views/Main.vue'
 import Store from '../views/Store.vue'
 import Error from '../views/Error404.vue'
+import StoreIndex from '../views/store/Index.vue'
+const Cart = () => import(/* webpackChunkName: "shopping-cart" */ '../views/store/Cart.vue')
 
 Vue.use(VueRouter)
 
@@ -15,7 +17,19 @@ const routes = [
   {
     path: '/store',
     name: 'Store',
-    component: Store
+    component: Store,
+    children: [
+      {
+        path: '',
+        name: 'StoreIndex',
+        component: StoreIndex,
+      },
+      {
+        path: 'cart',
+        name: 'Cart',
+        component: Cart,
+      }
+    ],
   },
   {
     path: '/*',
