@@ -10,7 +10,7 @@
         v-else
         id="cart">
             <div id="detail">
-                <DesktopCart v-if="windowWidth > 769" 
+                <DesktopCart v-if="windowWidth > 767" 
                     :products="cart"
                     :changeProductAttr="changeProductAttr"
                     :deleteProduct="deleteProduct"/>
@@ -56,9 +56,11 @@
         grid-template-columns: 4fr 1fr;
         column-gap: 30px;
         @media (max-width: $breakpoint-desktop) {
-            padding-top: 0;
             display: flex;
             flex-direction: column;
+        }
+        @media (max-width: $breakpoint-tablet) {
+            padding-top: 0;
         }
     }
     #summary {
@@ -71,7 +73,7 @@
 <script>
 import DesktopCart from '../../components/store/DesktopCart'
 import MobileCart from '../../components/store/MobileCart'
-import Summary from '../../components/store/DesktopCartSummary'
+import Summary from '../../components/store/CartSummary'
 export default {
     components: {
         DesktopCart,
