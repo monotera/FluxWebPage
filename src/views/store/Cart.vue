@@ -14,9 +14,11 @@
                     :products="cart"
                     :changeProductAttr="changeProductAttr"
                     :deleteProduct="deleteProduct"/>
-                <div v-else>
-                    
-                </div>
+                <MobileCart v-else
+                    :products="cart"
+                    :changeProductAttr="changeProductAttr"
+                    :deleteProduct="deleteProduct"/>
+                
             </div>
             <div id="summary">
                 <Summary
@@ -32,7 +34,10 @@
 <style lang="scss" scoped>
     #shopping-cart {
         padding: 50px 40px;
-        height: 100vh;
+        height: auto;
+        @media (max-width: $breakpoint-tablet) {
+            padding: 30px 10px;
+        }
     }
     .main-header {
         height: 20%;
@@ -50,15 +55,27 @@
         display: grid;
         grid-template-columns: 4fr 1fr;
         column-gap: 30px;
+        @media (max-width: $breakpoint-desktop) {
+            padding-top: 0;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    #summary {
+        @media (max-width: $breakpoint-desktop) {
+            margin-top: 20px;
+        }
     }
 </style>
 
 <script>
 import DesktopCart from '../../components/store/DesktopCart'
+import MobileCart from '../../components/store/MobileCart'
 import Summary from '../../components/store/DesktopCartSummary'
 export default {
     components: {
         DesktopCart,
+        MobileCart,
         Summary,
     },
     data() {
@@ -91,6 +108,15 @@ export default {
                     size: 'L',
                     sizes: ['M', 'L'],
                 },
+                {
+                    name: "Producto 4",
+                    category: "Camisetas",
+                    image: "https://contents.mediadecathlon.com/p1594532/k$5242b7ab6707052de43a6c0dd0a50c53/camiseta-regular-100-algodon-sportee-100-gimnasia-stretching-hombre-blanco.jpg?format=auto&f=800x800",
+                    price: 49000,
+                    quantity: 1,
+                    size: 'M',
+                    sizes: ['M', 'L'],
+                },
             ],
             windowWidth: 0,
             subtotal: 0,
@@ -117,6 +143,7 @@ export default {
         },
         deleteProduct(index) {
             this.cart.splice(index, 1);
+            this.calculateTotal();
         },
         changeProductAttr(index, attr, newVal) {
             this.cart[index][attr] = newVal;

@@ -53,6 +53,9 @@
         font-family: $table-data-font;
         font-size: 18px;
         color: $cart-data-font;
+         @media (max-width: $breakpoint-desktop) {
+             font-size: 16px;
+         }
     }
     #table-headers {
         display: grid;
@@ -64,6 +67,9 @@
         text-align: center;
         font-size: 24px;
         font-family: $table-headers-font;
+        @media (max-width: $breakpoint-desktop) {
+             font-size: 20px;
+         }
     }
     #table-products {
         width: 100%;

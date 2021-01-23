@@ -19,7 +19,7 @@
             :label="label"
             solo
             background-color="#cfcfcf"
-            class="col-5"
+            class="col-md-5 col-7"
             flat
             height="100%"
             :value="value" 
@@ -29,7 +29,7 @@
             >
                 <template v-slot:selection="{item}">
                     <span
-                    id="input-size"
+                    class="input-size"
                     >
                         {{item}}
                     </span>
@@ -59,7 +59,7 @@
     .input-qty:focus {
         outline: none;
     }
-    #input-size {
+    .input-size {
         background-color: #cfcfcf;
         color: #3f3f3f;
         font-family: $cart-selectors-font;
