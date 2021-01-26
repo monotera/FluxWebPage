@@ -1,19 +1,33 @@
 <template>
   <section>
-    <div class="left-section">
-      <carousel :starting-image="0" :images="images"></carousel>
+    <Header />
+    <div class="main-container">
+      <div class="left-section">
+        <div class="detailIndex">
+          <router-link class="detailIndexLink" to="/store">INICIO </router-link>
+          <i class="fas fa-chevron-right"></i>
+          <router-link class="detailIndexLink" to="/store/cart">PRODUCTOS </router-link>
+          <i class="fas fa-chevron-right"></i>
+          <p>CAMISA AZUL</p>
+        </div>
+        <carousel :starting-image="0" :images="images"></carousel>
+      </div>
+      <div class="rigth-section">
+        <DetailInfo />
+      </div>
     </div>
-    <div class="rigth-section">
-      <h1>s</h1>
-    </div>
+
+    <Footer />
   </section>
 </template>
 
 <script>
 import Carousel from "../../components/store/Carousel.vue";
-
+import DetailInfo from "../../components/store/DetailInfo.vue";
+import Header from "../../components/Header.vue";
+import Footer from "../../components/Footer.vue";
 export default {
-  components: { Carousel },
+  components: { Carousel, DetailInfo, Header, Footer },
   data() {
     return {
       images: [
@@ -52,18 +66,38 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section {
+.main-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 0;
   @media screen and (max-width: $breakpoint-desktop) {
     flex-direction: column;
   }
 }
+
 .left-section {
-  width: 40%;
-  margin: 0 5rem;
+  padding: 2rem;
+  margin: 0 2rem;
+  padding-left: 10rem;
+  .detailIndex {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-family: $detail-index-font;
+    font-size: 0.9rem;
+    p,
+    i {
+      margin-bottom: 0;
+      color: $main-links-color;
+      padding: 1rem;
+    }
+    .detailIndexLink:hover {
+      color: $main-links-color;
+    }
+  }
 }
 .rigth-section {
-  background-color: black;
-  width: 60%;
+  margin: 2rem;
 }
 </style>

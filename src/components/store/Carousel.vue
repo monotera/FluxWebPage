@@ -25,7 +25,6 @@ export default {
   name: "Carousel",
   data() {
     return {
-      //Index of the active image
       activeImage: 0,
     };
   },
@@ -61,14 +60,6 @@ export default {
     ) {
       this.activeImage = this.startingImage;
     }
-    //Check if autoSlideInterval prop was given and if it is a positive number
-    if (this.autoSlideInterval && this.autoSlideInterval > this.countdownInterval) {
-      //Start the timer to go to the next image
-      this.startTimer(this.autoSlideInterval);
-      this.timeLeft = this.autoSlideInterval;
-      //Start countdown to show the progressbar
-      this.startCountdown();
-    }
   },
   props: ["startingImage", "images"],
 };
@@ -77,6 +68,13 @@ export default {
 <style lang="scss" scoped>
 .card-carousel {
   width: 100%;
+}
+span {
+  color: $main-links-color;
+}
+img {
+  height: 500px;
+  width: 500px;
 }
 .thumbnails {
   display: flex;
