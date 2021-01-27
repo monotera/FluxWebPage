@@ -83,7 +83,7 @@ export default {
   .detailIndex {
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     font-family: $detail-index-font;
     font-size: 0.9rem;
     p,
@@ -96,8 +96,5 @@ export default {
       color: $main-links-color;
     }
   }
-}
-.rigth-section {
-  margin: 2rem;
 }
 </style>

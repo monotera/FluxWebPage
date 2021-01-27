@@ -13,20 +13,13 @@
       <p>InStock</p>
     </div>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-    <ul class="detailSizeSection">
-      <li
-        v-for="(size, index) in sizes"
-        :key="index"
-        @click="sizeSelector(index)"
-        :class="{ active: isActive == index }"
-      >
-        {{ size }}
-      </li>
-    </ul>
-    <v-column>
-      <v-text-field class="centered-input" type="number"></v-text-field>
-      <v-btn class="detailButton">Comprar</v-btn>
-    </v-column>
+    <v-row>
+      <v-column>
+        <v-select class="detailsInput" :items="sizes" label="Talla"></v-select>
+        <v-text-field label="Cantidad" class="detailsInput" type="number"></v-text-field>
+      </v-column>
+    </v-row>
+    <v-btn class="detailButton">Comprar</v-btn>
   </section>
 </template>
 
@@ -47,9 +40,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.centered-input {
-  width: 20rem;
+.row {
   font-size: 1.2rem;
+  margin: 0;
 }
 
 .detailInfo {
