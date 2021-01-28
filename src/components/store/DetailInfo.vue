@@ -1,35 +1,68 @@
 <template>
   <section class="detailInfo">
-    <p class="detailInfo-title">PRODUCT NAME</p>
+    <p class="detailInfo-title">{{ productName }}</p>
     <div class="prueba"></div>
-    <p class="detailInfo-price">$50.000</p>
+    <p class="detailInfo-price">${{ price }}</p>
     <div class="detailRaiting">
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
+      <i v-for="i in rating" :key="i" class="fas fa-star"></i>
     </div>
     <div class="detailInStock">
-      <i class="fas fa-circle"></i>
-      <p>InStock</p>
+      <i :class="qtyInStock > 0 ? 'inStock' : 'empty'" class="fas fa-circle"></i>
+      <p v-if="qtyInStock > 0">InStock</p>
+      <p v-else>Empty</p>
     </div>
     <p class="detailInfo">
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      {{ detailInfo }}
     </p>
-    <div class="detailSelector">
-      <v-select class="detailsInput" :items="sizes" label="Talla"></v-select>
-      <v-text-field label="Cantidad" class="detailsInput" type="number"></v-text-field>
-    </div>
-    <v-btn class="detailButton">Comprar</v-btn>
+
+    <v-form v-model="isButtonDisable" class="detailSelector">
+      <v-select
+        :rules="[(v) => !!v || 'El campo es obligatorio']"
+        class="detailsInput"
+        :items="sizes"
+        label="Talla"
+        v-model="size"
+      ></v-select>
+      <v-text-field
+        v-model="qty"
+        :rules="numberValidation"
+        label="Cantidad"
+        class="detailsInput"
+        type="number"
+      ></v-text-field
+      ><v-btn type="submit" :disabled="!isButtonDisable" class="detailButton"
+        >Comprar</v-btn
+      >
+    </v-form>
   </section>
 </template>
 
 <script>
 export default {
+  props: {
+    sizes: [],
+    rating: Number,
+    productName: String,
+  },
   data() {
     return {
       isActive: -1,
+      qty: "",
+      talla: "",
+      size: "",
       sizes: ["XS", "S", "M", "L", "XL"],
+      rating: 4,
+      productName: "Camisa Azul",
+      qtyInStock: 5,
+      price: 50000,
+      isButtonDisable: true,
+      detailInfo:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+
+      numberValidation: [
+        (v) => !!v || "El campo es obligatorio",
+        (v) => v <= this.qtyInStock || "No hay suficientes elementos",
+      ],
     };
   },
   methods: {
@@ -94,8 +127,13 @@ export default {
 
     margin: 1rem 0;
     i {
-      color: lime;
       padding-right: 0.5rem;
+    }
+    .inStock {
+      color: lime;
+    }
+    .empty {
+      color: rgb(247, 72, 72);
     }
     p {
       margin: 0;

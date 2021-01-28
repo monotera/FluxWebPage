@@ -8,7 +8,7 @@
           <i class="fas fa-chevron-right"></i>
           <router-link class="detailIndexLink" to="/store/cart">PRODUCTOS </router-link>
           <i class="fas fa-chevron-right"></i>
-          <p>CAMISA AZUL</p>
+          <p>{{ productName }}</p>
         </div>
         <carousel :starting-image="0" :images="images"></carousel>
       </div>
@@ -30,6 +30,7 @@ export default {
   components: { Carousel, DetailInfo, Header, Footer },
   data() {
     return {
+      productName: "CAMISA AZUL",
       images: [
         {
           id: "1",
