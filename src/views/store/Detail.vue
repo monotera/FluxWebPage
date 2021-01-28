@@ -13,10 +13,16 @@
         <carousel :starting-image="0" :images="images"></carousel>
       </div>
       <div class="rigth-section">
-        <DetailInfo />
+        <DetailInfo
+          :sizes="sizes"
+          :rating="rating"
+          :productName="productName"
+          :qtyInStock="qtyInStock"
+          :price="price"
+          :detailInfo="detailInfo"
+        />
       </div>
     </div>
-
     <Footer />
   </section>
 </template>
@@ -31,6 +37,12 @@ export default {
   data() {
     return {
       productName: "CAMISA AZUL",
+      sizes: ["XS", "S", "M", "L", "XL"],
+      rating: 4,
+      qtyInStock: 5,
+      price: "50.000",
+      detailInfo:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       images: [
         {
           id: "1",

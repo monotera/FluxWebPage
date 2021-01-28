@@ -14,10 +14,8 @@
     <p class="detailInfo">
       {{ detailInfo }}
     </p>
-
     <v-form v-model="isButtonDisable" class="detailSelector">
       <v-select
-        :rules="[(v) => !!v || 'El campo es obligatorio']"
         class="detailsInput"
         :items="sizes"
         label="Talla"
@@ -43,6 +41,9 @@ export default {
     sizes: [],
     rating: Number,
     productName: String,
+    qtyInStock: Number,
+    price: String,
+    detailInfo: String,
   },
   data() {
     return {
@@ -50,15 +51,7 @@ export default {
       qty: "",
       talla: "",
       size: "",
-      sizes: ["XS", "S", "M", "L", "XL"],
-      rating: 4,
-      productName: "Camisa Azul",
-      qtyInStock: 5,
-      price: 50000,
       isButtonDisable: true,
-      detailInfo:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-
       numberValidation: [
         (v) => !!v || "El campo es obligatorio",
         (v) => v <= this.qtyInStock || "No hay suficientes elementos",
@@ -74,16 +67,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.detailSelector {
-  font-size: 1.2rem;
-  .detailsInput {
-    width: 50%;
-    @media screen and (max-width: $breakpoint-tablet) {
-      width: 80%;
-    }
-  }
-}
-
 .detailInfo {
   font-family: $detail-info-font;
   display: flex;
@@ -94,7 +77,7 @@ export default {
     font-size: 1.5rem;
   }
   .detailInfo-title {
-    border-bottom: 2px solid lightseagreen;
+    border-bottom: 2px solid $detail-color;
     width: 50%;
     margin: 0.5rem 0;
     @media screen and (max-width: $breakpoint-tablet - 2px) {
@@ -103,7 +86,7 @@ export default {
     }
   }
   .detailButton {
-    background-color: lightseagreen;
+    background-color: $detail-color;
     color: white;
     height: 3.5rem;
     width: 15rem;
@@ -114,7 +97,7 @@ export default {
     }
   }
   .detailRaiting {
-    color: lightseagreen;
+    color: $detail-color;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -140,28 +123,13 @@ export default {
       font-family: $detail-inStock-font;
     }
   }
-  .detailSizeSection {
-    list-style-type: none;
-    display: flex;
-    flex-flow: row wrap;
-    width: 80%;
-    padding: 0;
-    li {
-      border: 1px solid black;
-      padding: 15px 60px;
-      margin: 1rem;
-      margin-left: 0;
-      &:hover {
-        color: white;
-        background-color: lightseagreen;
-        cursor: pointer;
-        opacity: 80%;
+  .detailSelector {
+    font-size: 1.2rem;
+    .detailsInput {
+      width: 50%;
+      @media screen and (max-width: $breakpoint-tablet) {
+        width: 80%;
       }
-    }
-    .active {
-      background-color: lightseagreen;
-      color: white !important;
-      opacity: 80%;
     }
   }
 }
