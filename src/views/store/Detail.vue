@@ -73,6 +73,7 @@ export default {
   padding: 8rem 0;
   @media screen and (max-width: $breakpoint-desktop) {
     flex-direction: column;
+    margin: 0 1.5rem;
   }
 }
 
@@ -80,6 +81,9 @@ export default {
   padding: 2rem;
   margin: 0 2rem;
   padding-left: 10rem;
+  @media screen and (max-width: $breakpoint-desktopSmall) {
+    padding: 2rem 0;
+  }
   .detailIndex {
     display: flex;
     align-items: center;

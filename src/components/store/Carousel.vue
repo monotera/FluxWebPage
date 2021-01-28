@@ -75,6 +75,10 @@ span {
 img {
   height: 500px;
   width: 500px;
+  @media screen and (max-width: $breakpoint-tablet) {
+    height: 300px;
+    width: 300px;
+  }
 }
 .thumbnails {
   display: flex;

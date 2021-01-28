@@ -1,6 +1,7 @@
 <template>
   <section class="detailInfo">
     <p class="detailInfo-title">PRODUCT NAME</p>
+    <div class="prueba"></div>
     <p class="detailInfo-price">$50.000</p>
     <div class="detailRaiting">
       <i class="fas fa-star"></i>
@@ -12,13 +13,13 @@
       <i class="fas fa-circle"></i>
       <p>InStock</p>
     </div>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-    <v-row>
-      <v-column>
-        <v-select class="detailsInput" :items="sizes" label="Talla"></v-select>
-        <v-text-field label="Cantidad" class="detailsInput" type="number"></v-text-field>
-      </v-column>
-    </v-row>
+    <p class="detailInfo">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    </p>
+    <div class="detailSelector">
+      <v-select class="detailsInput" :items="sizes" label="Talla"></v-select>
+      <v-text-field label="Cantidad" class="detailsInput" type="number"></v-text-field>
+    </div>
     <v-btn class="detailButton">Comprar</v-btn>
   </section>
 </template>
@@ -40,14 +41,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.row {
+.detailSelector {
   font-size: 1.2rem;
-  margin: 0;
+  .detailsInput {
+    width: 50%;
+    @media screen and (max-width: $breakpoint-tablet) {
+      width: 80%;
+    }
+  }
 }
 
 .detailInfo {
   font-family: $detail-info-font;
-
+  display: flex;
+  flex-direction: column;
   .detailInfo-title,
   .detailInfo-price {
     font-family: $detail-title-font;
@@ -55,8 +62,12 @@ export default {
   }
   .detailInfo-title {
     border-bottom: 2px solid lightseagreen;
-    width: 15rem;
+    width: 50%;
     margin: 0.5rem 0;
+    @media screen and (max-width: $breakpoint-tablet - 2px) {
+      width: 100%;
+      text-align: center;
+    }
   }
   .detailButton {
     background-color: lightseagreen;
@@ -65,6 +76,9 @@ export default {
     width: 15rem;
     margin: 1rem 0;
     font-family: $detail-title-font;
+    @media screen and (max-width: $breakpoint-tablet - 2px) {
+      width: 100%;
+    }
   }
   .detailRaiting {
     color: lightseagreen;
