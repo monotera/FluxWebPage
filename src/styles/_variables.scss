@@ -14,12 +14,13 @@ $main-links-color: lightseagreen;
 $dark-theme-background: #121212;
 $dark-theme-background2: #181818;
 $dark-theme-surface: #282828;
-$main-icon-color:  lightseagreen;
-$main-hover-color:  lightseagreen;
+$main-icon-color: lightseagreen;
+$main-hover-color: lightseagreen;
 $store-header-underline: #000;
 $cart-data-font: #000;
 $cart-data-underline: #000;
-$table-subtotals-font: #5E5E5E;
+$table-subtotals-font: #5e5e5e;
+$detail-color: lightseagreen;
 
 // fonts
 $footer-main-font: "fontMontserratRegular", sans-serif;
@@ -41,3 +42,7 @@ $cart-selectors-font: "fontRobotoRegular", sans-serif;
 $cart-mobile-product-title: "fontMontserratBold", sans-serif;
 $cart-mobile-summary-font: "fontMontserratSemiBold", sans-serif;
 $cart-mobile-total-font: "fontMontserratBold", sans-serif;
+$detail-index-font: "fontMontserratSemiBold", sans-serif;
+$detail-info-font: "fontMontserratRegular", sans-serif;
+$detail-title-font: "fontMontserratBold", sans-serif;
+$detail-inStock-font: "fontMontserratSemiBold", sans-serif;

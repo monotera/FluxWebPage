@@ -10,6 +10,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "@mdi/font": "^3.6.95",
+    "@splidejs/vue-splide": "^0.3.5",
     "connect-history-api-fallback": "^1.6.0",
     "core-js": "^3.6.5",
     "css-loader": "^5.0.1",
