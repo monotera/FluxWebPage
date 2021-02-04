@@ -24,15 +24,17 @@
 
         <form
         id="search"
-        @submit.prevent="onChangeName($event.target[0].value)"
+        @submit.prevent="onChangeName(search)"
         >
-            <v-text-field 
+            <v-autocomplete
+            :items="productNames"
+            v-model="search"
             solo
             flat
             class="center"
             :height="height"
-            @change="onChangeName($event)"
-            ></v-text-field>
+            @change="onChangeName(search)"
+            ></v-autocomplete>
             <button 
             class="right"
             type="submit">
@@ -127,6 +129,12 @@
 
 <script>
 export default {
-    props: ['categories', 'categorySelected', 'onChangeCategory', 'onChangeName', 'height'],
+    props: ['categories', 'categorySelected', 'onChangeCategory', 'onChangeName', 'height', 'products'],
+    data() {
+        return {
+            productNames : this.products.map(product => product.name).concat(''),
+            search: '',
+        }
+    }
 }
 </script>
