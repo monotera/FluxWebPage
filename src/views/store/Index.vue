@@ -4,7 +4,7 @@
     :categorySelected="categorySelected"
     :onChangeCategory="onChangeCategory"
     :onChangeName="filterByName"
-    :search="search"
+    :products="products"
     :height=" windowWidth < 1024 ? '48' : '80'"
     />
 </template>
@@ -40,7 +40,6 @@ export default {
           },
         ],
         filteredProducts : [],
-        search: '',
         windowWidth: 0,
     }
   },
