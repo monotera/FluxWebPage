@@ -1,6 +1,5 @@
 <template>
   <section>
-    <Header />
     <div class="main-container">
       <div class="left-section">
         <div class="detailIndex">
@@ -23,24 +22,22 @@
         />
       </div>
     </div>
-    <Footer />
   </section>
 </template>
 
 <script>
 import Carousel from "../../components/store/Carousel.vue";
 import DetailInfo from "../../components/store/DetailInfo.vue";
-import Header from "../../components/Header.vue";
-import Footer from "../../components/Footer.vue";
+
 export default {
-  components: { Carousel, DetailInfo, Header, Footer },
+  components: { Carousel, DetailInfo },
   data() {
     return {
       productName: "CAMISA AZUL",
       sizes: ["XS", "S", "M", "L", "XL"],
       rating: 4,
       qtyInStock: 5,
-      price: "50.000",
+      price: 50000,
       detailInfo:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       images: [

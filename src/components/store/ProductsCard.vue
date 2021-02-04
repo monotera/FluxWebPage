@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card class="mx-auto" max-width="300" color="white" hover
-      ><router-link :to="('store/' + product.name).replace(/\s/g, '')">
+      ><router-link :to="('store/' + product.id).replace(/\s/g, '')">
         <v-img
           :lazy-src="product.thumbnail"
           :src="product.thumbnail"
@@ -18,7 +18,7 @@
         ></v-img>
         <v-card-title class="productTittle"> {{ product.name }}</v-card-title>
         <v-card-subtitle>
-          <p class="productPrice">${{ product.price }}</p>
+          <p class="productPrice">{{ formatPrice(product.price) }}</p>
           <div class="detailInStock">
             <i :class="product.inStock ? 'inStock' : 'empty'" class="fas fa-circle"></i>
             <p v-if="product.inStock">InStock</p>
@@ -34,6 +34,14 @@
 export default {
   props: {
     product: Object,
+  },
+  methods: {
+    formatPrice(x) {
+      x = Math.round((x + Number.EPSILON) * 100) / 100;
+      const parts = x.toString().split(".");
+      parts[0] = parts[0].replace(/(\d+)(?=\d{3})/g, "$ $1,");
+      return parts.join(".");
+    },
   },
 };
 </script>
