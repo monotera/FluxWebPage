@@ -1,23 +1,20 @@
 <template>
   <v-app>
     <StoreHeader/>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <div class="search">
       <router-view></router-view>
     </div>
+    <Footer />
   </v-app>
 </template>
 
 <script>
-import StoreHeader from '../components/store/StoreHeader'
+import StoreHeader from '../components/store/StoreHeader';
+import Footer from "../components/Footer";
 export default {
   components: {
     StoreHeader,
+    Footer,
   }
 };
 </script>

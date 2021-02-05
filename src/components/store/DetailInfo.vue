@@ -2,7 +2,7 @@
   <section class="detailInfo">
     <p class="detailInfo-title">{{ productName }}</p>
     <div class="prueba"></div>
-    <p class="detailInfo-price">${{ price }}</p>
+    <p class="detailInfo-price">{{ formatPrice(price) }}</p>
     <div class="detailRaiting">
       <i v-for="i in rating" :key="i" class="fas fa-star"></i>
     </div>
@@ -42,7 +42,7 @@ export default {
     rating: Number,
     productName: String,
     qtyInStock: Number,
-    price: String,
+    price: Number,
     detailInfo: String,
   },
   data() {
@@ -61,6 +61,12 @@ export default {
   methods: {
     sizeSelector(el) {
       this.isActive = el;
+    },
+    formatPrice(x) {
+      x = Math.round((x + Number.EPSILON) * 100) / 100;
+      const parts = x.toString().split(".");
+      parts[0] = parts[0].replace(/(\d+)(?=\d{3})/g, "$ $1,");
+      return parts.join(".");
     },
   },
 };

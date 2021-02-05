@@ -1,7 +1,16 @@
 <template>
   <div class="card-carousel">
     <div class="card-img">
-      <img :src="currentImage" alt="" />
+      <v-img class="mainImg" :lazy-src="currentImage" :src="currentImage" alt="">
+        <template v-slot:placeholder>
+          <v-row class="fill-height ma-0" align="center" justify="center">
+            <v-progress-circular
+              indeterminate
+              color="grey lighten-5"
+            ></v-progress-circular>
+          </v-row>
+        </template>
+      </v-img>
       <div class="actions">
         <span @click="prevImage" class="prev"> &#8249; </span>
         <span @click="nextImage" class="next"> &#8250; </span>
@@ -72,7 +81,7 @@ export default {
 span {
   color: $main-links-color;
 }
-img {
+.mainImg {
   height: 500px;
   width: 500px;
   @media screen and (max-width: $breakpoint-tablet) {
@@ -91,13 +100,13 @@ img {
   cursor: pointer;
   padding: 2px;
 }
-.thumbnail-image > img {
+.thumbnail-image > .mainImg {
   width: 100%;
   height: auto;
   transition: all 250ms;
 }
-.thumbnail-image:hover > img,
-.thumbnail-image.active > img {
+.thumbnail-image:hover > .mainImg,
+.thumbnail-image.active > .mainImg {
   opacity: 0.6;
   box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.5);
 }
@@ -105,7 +114,7 @@ img {
   position: relative;
   margin-bottom: 15px;
 }
-.card-img > img {
+.card-img > .mainImg {
   display: block;
   margin: 0 auto;
 }
