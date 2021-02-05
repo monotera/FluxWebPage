@@ -1,37 +1,47 @@
 <template>
-  <div id="searchbar">
-    <div id="left">
-      <v-select
-        solo
-        background-color="black"
-        class="black left"
-        id="select"
-        :value="categorySelected"
-        :items="categories"
-        append-icon="mdi-chevron-down teal--text text--lighten-1 "
-        v-on:change="onChangeCategory($event)"
-      >
-        <template v-slot:selection="{ item }">
-          <span class="white--text d-flex align-center main-hover">
-            {{ item }}
-          </span>
-        </template>
-      </v-select>
-    </div>
+    <div id="searchbar">
+        <div id="left">
+            <v-select
+            solo
+            background-color="black"
+            class="black left"
+            id="select"
+            :value="categorySelected" 
+            :items="categories"
+            append-icon="mdi-chevron-down teal--text text--lighten-1 "
+            v-on:change="onChangeCategory($event)"
+            >
+            <template v-slot:selection="{item}">
+                <span
+                class="white--text d-flex align-center main-hover"
+                >
+                    {{item}}
+                </span>
 
-    <form id="search" @submit.prevent="onChangeName($event.target[0].value)">
-      <v-text-field
-        solo
-        flat
-        class="center"
-        :height="height"
-        @change="onChangeName($event)"
-      ></v-text-field>
-      <button class="right" type="submit">
-        <v-icon class="right main-hover">mdi-magnify</v-icon>
-      </button>
-    </form>
-  </div>
+            </template>
+            </v-select>
+        </div>
+
+        <form
+        id="search"
+        @submit.prevent="onChangeName(search)"
+        >
+            <v-autocomplete
+            :items="productNames"
+            v-model="search"
+            solo
+            flat
+            class="center"
+            :height="height"
+            @change="onChangeName(search)"
+            ></v-autocomplete>
+            <button 
+            class="right"
+            type="submit">
+                <v-icon class="right main-hover">mdi-magnify</v-icon>
+            </button>
+        </form>
+    </div>
 </template>
 
 <style lang="scss" scoped>
@@ -116,6 +126,12 @@ html {
 
 <script>
 export default {
-  props: ["categories", "categorySelected", "onChangeCategory", "onChangeName", "height"],
-};
+    props: ['categories', 'categorySelected', 'onChangeCategory', 'onChangeName', 'height', 'products'],
+    data() {
+        return {
+            productNames : this.products.map(product => product.name).concat(''),
+            search: '',
+        }
+    }
+}
 </script>

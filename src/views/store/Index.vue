@@ -1,13 +1,13 @@
 <template>
   <div class="index">
     <div class="indexMainSection">
-      <Searchbar
-        :categories="categories"
+      <Searchbar 
+        :categories="categories" 
         :categorySelected="categorySelected"
         :onChangeCategory="onChangeCategory"
         :onChangeName="filterByName"
-        :search="search"
-        :height="windowWidth < 1024 ? '48' : '80'"
+        :products="products"
+        :height=" windowWidth < 1024 ? '48' : '80'"
       />
       <h1>{{ search }}</h1>
       <div v-if="categorySelected == 'TODOS'" class="products">
@@ -105,7 +105,6 @@ export default {
         },
       ],
       filteredProducts: [],
-      search: "",
       windowWidth: 0,
     };
   },

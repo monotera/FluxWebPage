@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Header />
+    <StoreHeader/>
     <div class="search">
       <router-view></router-view>
     </div>
@@ -9,13 +9,13 @@
 </template>
 
 <script>
+import StoreHeader from '../components/store/StoreHeader';
 import Footer from "../components/Footer";
-import Header from "../components/Header";
 export default {
   components: {
-    Header,
+    StoreHeader,
     Footer,
-  },
+  }
 };
 </script>
 
